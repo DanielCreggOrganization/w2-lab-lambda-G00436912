@@ -1,5 +1,7 @@
 package ie.atu.lambda;
 
+import java.util.function.Function;
+
 public class Main {
     public static void main(String[] args) {
        /*MathOperation addition = new Addition();
@@ -33,8 +35,8 @@ public class Main {
         System.out.println("Input:" + input2);
         System.out.println("Result:" + result2);
 
-        //Lab 3
-        
+        //Part 3
+
         // Create a Runnable instance using a lambda expression
         Runnable task = () -> System.out.println("Hello from the thread");
 
@@ -51,6 +53,27 @@ public class Main {
 
         // If you'd like to print a message from the main thread as well:
         System.out.println("Main thread has finished executing.");
+
+
+        //Part 4
+
+        // Define a lambda to trim spaces from a string
+        Function<String, String> trimSpaces = s -> s.trim();
+
+        // Define a lambda to convert a string to lowercase
+        Function<String, String> toLowerCase = s -> s.toLowerCase();
+
+        // Combine the lambdas: trim first, then convert to lowercase
+        Function<String, String> combinedOperation = trimSpaces.andThen(toLowerCase);
+
+        // Test the combined operation with a string of your choice
+        String input3= "   Hello World!   ";
+        String result3= combinedOperation.apply(input);
+
+        // Print the result
+        System.out.println("Input: '" + input3+ "'");
+        System.out.println("Result: '" + result3+ "'");
+
 
 
     }
