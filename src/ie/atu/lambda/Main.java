@@ -33,7 +33,24 @@ public class Main {
         System.out.println("Input:" + input2);
         System.out.println("Result:" + result2);
 
+        //Lab 3
         
+        // Create a Runnable instance using a lambda expression
+        Runnable task = () -> System.out.println("Hello from the thread");
+
+        // Start a new thread with the Runnable
+        Thread thread = new Thread(task);
+        thread.start();  // This starts the thread and executes the Runnable
+
+        // Optional: To ensure the main thread waits for the thread to finish
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // If you'd like to print a message from the main thread as well:
+        System.out.println("Main thread has finished executing.");
 
 
     }
