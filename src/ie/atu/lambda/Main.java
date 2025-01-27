@@ -19,5 +19,22 @@ public class Main {
         //Print result
         System.out.println("Input:" + input);
         System.out.println("Result:" + result);
+
+        //Part 2 Lambda
+
+        // Using a lambda expression instead of implementing the interface via a class
+        StringOperation ToUpperCase2= input2-> input2.toUpperCase();
+
+        //Test the apply method with a string
+        String input2= "my name is andrea";
+        String result2= ToUpperCase2.apply(input2);
+
+        //Print result
+        System.out.println("Input:" + input2);
+        System.out.println("Result:" + result2);
+
+        
+
+
     }
 }
